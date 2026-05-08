@@ -1,0 +1,2162 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maso dello Speck – Shooting Primaverile 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #8B6914;
+  --gold-light: #C4A35A;
+  --gold-pale: #F0E5C8;
+  --gold-subtle: #FAF3E3;
+  --burgundy: #5C1A1A;
+  --burgundy-light: #8B3030;
+  --dark: #2C2218;
+  --text: #2C2218;
+  --text-mid: #6B5744;
+  --text-light: #9B8575;
+  --cream: #FAF7F2;
+  --cream-dark: #EDE8DF;
+  --cream-darker: #E0D8CC;
+  --green: #3D6B4F;
+  --green-light: #EBF4EE;
+  --shadow: 0 2px 12px rgba(44,34,24,0.10);
+  --shadow-md: 0 4px 20px rgba(44,34,24,0.14);
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  min-height: 100vh;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+}
+
+/* ── HEADER ── */
+.site-header {
+  background: var(--dark);
+  color: var(--cream);
+  padding: 24px 32px 20px;
+  border-bottom: 3px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.header-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.brand-eyebrow {
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+.brand-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--cream);
+  letter-spacing: 0.5px;
+}
+.brand-subtitle {
+  font-family: 'Lato', sans-serif;
+  font-size: 11px;
+  color: var(--text-light);
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+.header-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.meta-badge {
+  background: var(--gold);
+  color: var(--cream);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+.meta-date {
+  font-size: 11px;
+  color: var(--text-light);
+}
+.header-progress {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.progress-label {
+  font-size: 11px;
+  color: var(--gold-light);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.progress-bar-track {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+.progress-pct {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold-light);
+  min-width: 36px;
+  text-align: right;
+}
+
+/* ── TABS ── */
+.tab-nav {
+  background: var(--dark);
+  padding: 0 24px;
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  border-bottom: 2px solid var(--gold);
+  scrollbar-width: none;
+}
+.tab-nav::-webkit-scrollbar { display: none; }
+.tab-btn {
+  padding: 11px 18px;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+  position: relative;
+  top: 2px;
+}
+.tab-btn:hover { color: var(--gold-light); }
+.tab-btn.active {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold);
+}
+.tab-btn .tab-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-left: 5px;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
+
+/* ── CONTENT ── */
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.content-wrapper { max-width: 960px; margin: 0 auto; padding: 28px 24px 60px; }
+
+/* ── SECTION CARDS ── */
+.section-card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.section-header {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid var(--cream-dark);
+}
+.section-header:hover { background: var(--cream); }
+.section-title-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-icon { font-size: 18px; }
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+}
+.section-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.priority-badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+.p-max { background: var(--burgundy); color: white; }
+.p-alta { background: var(--gold); color: white; }
+.p-supporto { background: var(--cream-darker); color: var(--text-mid); }
+.p-logistica { background: var(--dark); color: white; }
+
+.section-prog-mini {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.prog-mini-track {
+  width: 64px;
+  height: 4px;
+  background: var(--cream-dark);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.prog-mini-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: width 0.4s;
+}
+.prog-mini-pct {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-mid);
+  min-width: 28px;
+  text-align: right;
+}
+.toggle-arrow {
+  font-size: 12px;
+  color: var(--text-light);
+  transition: transform 0.25s;
+}
+.section-card.collapsed .toggle-arrow { transform: rotate(-90deg); }
+
+.section-body { padding: 0 20px 16px; }
+.section-card.collapsed .section-body { display: none; }
+
+/* ── CATEGORY ── */
+.category-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  padding: 14px 0 6px;
+  border-bottom: 1px solid var(--cream-dark);
+  margin-bottom: 8px;
+}
+.category-label:first-child { padding-top: 16px; }
+
+/* ── CHECKLIST ITEMS ── */
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--cream);
+  cursor: pointer;
+  transition: background 0.15s;
+  border-radius: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.check-item:hover { background: var(--cream); }
+.check-item:last-child { border-bottom: none; }
+
+.custom-checkbox {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  border-radius: 5px;
+  border: 2px solid var(--cream-darker);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.check-item.checked .custom-checkbox {
+  background: var(--green);
+  border-color: var(--green);
+}
+.check-mark {
+  display: none;
+  color: white;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+}
+.check-item.checked .check-mark { display: block; }
+
+.check-label {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text);
+  flex: 1;
+  transition: color 0.2s;
+}
+.check-item.checked .check-label {
+  color: var(--text-light);
+  text-decoration: line-through;
+  text-decoration-color: var(--text-light);
+}
+
+.check-tag {
+  display: inline-block;
+  background: var(--gold-subtle);
+  color: var(--gold);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+  margin-top: 2px;
+  border: 1px solid var(--gold-pale);
+}
+
+/* ── ALERT BOX ── */
+.alert-box {
+  background: #FFF8E1;
+  border: 1px solid #FFD54F;
+  border-left: 4px solid #FFA000;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #5D4037;
+  margin: 10px 0;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+/* ── TIMELINE (Giornata) ── */
+.timeline { position: relative; padding-left: 28px; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--cream-dark);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 16px;
+}
+.timeline-dot {
+  position: absolute;
+  left: -23px;
+  top: 10px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--gold);
+  z-index: 1;
+  transition: background 0.2s;
+}
+.timeline-item.checked .timeline-dot {
+  background: var(--green);
+  border-color: var(--green);
+}
+.timeline-card {
+  background: white;
+  border: 1px solid var(--cream-dark);
+  border-radius: 8px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.timeline-card:hover { box-shadow: var(--shadow); }
+.timeline-item.checked .timeline-card {
+  background: var(--green-light);
+  border-color: var(--green);
+}
+.timeline-time {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.timeline-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dark);
+}
+.timeline-desc {
+  font-size: 12px;
+  color: var(--text-mid);
+  margin-top: 3px;
+  line-height: 1.5;
+}
+.timeline-item.checked .timeline-title { color: var(--green); }
+
+/* ── DASHBOARD ── */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.stat-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  border-top: 3px solid var(--gold);
+}
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+.priority-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.prio-row {
+  background: white;
+  border-radius: 8px;
+  padding: 14px 18px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  border-left: 4px solid var(--cream-dark);
+  transition: box-shadow 0.2s;
+}
+.prio-row:hover { box-shadow: var(--shadow-md); }
+.prio-row.p1 { border-left-color: var(--burgundy); }
+.prio-row.p2 { border-left-color: var(--gold); }
+.prio-row.p3 { border-left-color: var(--text-light); }
+.prio-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--cream-dark);
+  min-width: 30px;
+}
+.prio-info { flex: 1; }
+.prio-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--dark);
+}
+.prio-desc {
+  font-size: 12px;
+  color: var(--text-mid);
+  margin-top: 2px;
+}
+.prio-prog {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  min-width: 80px;
+}
+.prio-prog-bar {
+  width: 80px;
+  height: 5px;
+  background: var(--cream-dark);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.prio-prog-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 3px;
+  transition: width 0.4s;
+}
+.prio-prog-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-mid);
+}
+
+/* ── MISC ── */
+.intro-note {
+  background: var(--gold-subtle);
+  border: 1px solid var(--gold-pale);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 12px;
+  color: var(--text-mid);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.intro-note strong { color: var(--dark); }
+
+.format-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.chip {
+  background: var(--cream-dark);
+  color: var(--text-mid);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+.chip.gold { background: var(--gold-pale); color: var(--gold); }
+
+.section-sep {
+  border: none;
+  border-top: 1px solid var(--cream-dark);
+  margin: 6px 0 12px;
+}
+
+@media (max-width: 600px) {
+  .site-header { padding: 16px 16px 12px; }
+  .content-wrapper { padding: 16px 12px 50px; }
+  .brand-title { font-size: 18px; }
+  .tab-btn { padding: 10px 12px; font-size: 11px; }
+  .dashboard-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media print {
+  .tab-nav, .site-header { position: static; }
+  .tab-content { display: block !important; }
+  .section-card.collapsed .section-body { display: block !important; }
+  .toggle-arrow { display: none; }
+  .section-header { cursor: default; }
+  .section-card { break-inside: avoid; margin-bottom: 30px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-top">
+    <div class="header-brand">
+      <span class="brand-eyebrow">Maso dello Speck – Daiano, Val di Fiemme</span>
+      <h1 class="brand-title">Shooting Primaverile 2026</h1>
+      <span class="brand-subtitle">Tradizione di Tito dal 1961 &nbsp;·&nbsp; Maso a Daiano dal 2005</span>
+    </div>
+    <div class="header-meta">
+      <span class="meta-badge">Maggio 2026</span>
+      <span class="meta-date">Project Lead: Miriam &nbsp;·&nbsp; Camera: Thomas &nbsp;·&nbsp; Cast: Federica Braito</span>
+    </div>
+  </div>
+  <div class="header-progress">
+    <span class="progress-label">Avanzamento totale</span>
+    <div class="progress-bar-track">
+      <div class="progress-bar-fill" id="global-fill"></div>
+    </div>
+    <span class="progress-pct" id="global-pct">0%</span>
+  </div>
+</header>
+
+<!-- TAB NAV -->
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="showTab('dashboard')">📊 Panoramica</button>
+  <button class="tab-btn" onclick="showTab('founder')">🎬 Founder Story <span class="tab-badge" id="badge-founder">0%</span></button>
+  <button class="tab-btn" onclick="showTab('talking')">🎙️ Talking Heads <span class="tab-badge" id="badge-talking">0%</span></button>
+  <button class="tab-btn" onclick="showTab('primavera')">🌸 Primavera <span class="tab-badge" id="badge-primavera">0%</span></button>
+  <button class="tab-btn" onclick="showTab('estate')">☀️ Estate <span class="tab-badge" id="badge-estate">0%</span></button>
+  <button class="tab-btn" onclick="showTab('broll')">📽️ B-Roll <span class="tab-badge" id="badge-broll">0%</span></button>
+  <button class="tab-btn" onclick="showTab('giornata')">📅 Giornata <span class="tab-badge" id="badge-giornata">0%</span></button>
+</nav>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- TAB: DASHBOARD -->
+<!-- ═══════════════════════════════════════ -->
+<div class="tab-content active" id="tab-dashboard">
+  <div class="content-wrapper">
+    <div class="intro-note">
+      <strong>Output utilizzo: Maggio – Settembre 2026.</strong> Questo documento è interattivo: spunta ogni elemento man mano che viene girato o completato. Il progresso si aggiorna in tempo reale.
+    </div>
+
+    <!-- STAT CARDS -->
+    <div class="dashboard-grid">
+      <div class="stat-card">
+        <div class="stat-number" id="stat-total">–</div>
+        <div class="stat-label">Elementi totali</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="stat-done">0</div>
+        <div class="stat-label">Completati</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="stat-open">–</div>
+        <div class="stat-label">Da completare</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="stat-pct">0%</div>
+        <div class="stat-label">Avanzamento</div>
+      </div>
+    </div>
+
+    <!-- PRIORITY OVERVIEW -->
+    <div style="margin-bottom:12px;">
+      <span style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-light);">Priorità per sezione</span>
+    </div>
+    <div class="priority-overview">
+      <div class="prio-row p1" onclick="showTab('founder')">
+        <span class="prio-num">01</span>
+        <div class="prio-info">
+          <div class="prio-name">🎬 Founder Story</div>
+          <div class="prio-desc">Evergreen – massimo valore strategico · Setup intervista, 8 domande, 3 Ad Angles, Master Video 90 sec</div>
+          <div class="format-chips" style="margin-top:6px;">
+            <span class="chip">9:16</span><span class="chip">16:9</span><span class="chip gold">Evergreen</span>
+          </div>
+        </div>
+        <div class="prio-prog">
+          <div class="prio-prog-bar"><div class="prio-prog-fill" id="prio-fill-founder" style="width:0%"></div></div>
+          <span class="prio-prog-text" id="prio-pct-founder">0%</span>
+          <span class="priority-badge p-max">Massima</span>
+        </div>
+      </div>
+
+      <div class="prio-row p1" onclick="showTab('talking')">
+        <span class="prio-num">02</span>
+        <div class="prio-info">
+          <div class="prio-name">🎙️ Talking Heads per Ads</div>
+          <div class="prio-desc">5 topic performance · Speck artigianale, Tradizionale vs Riserva, Riserva Nazionale, Punzonatura, 3 errori</div>
+          <div class="format-chips" style="margin-top:6px;">
+            <span class="chip">9:16</span><span class="chip gold">Cold Traffic</span><span class="chip gold">A/B Test</span>
+          </div>
+        </div>
+        <div class="prio-prog">
+          <div class="prio-prog-bar"><div class="prio-prog-fill" id="prio-fill-talking" style="width:0%"></div></div>
+          <span class="prio-prog-text" id="prio-pct-talking">0%</span>
+          <span class="priority-badge p-max">Massima</span>
+        </div>
+      </div>
+
+      <div class="prio-row p2" onclick="showTab('primavera')">
+        <span class="prio-num">03</span>
+        <div class="prio-info">
+          <div class="prio-name">🌸 Tema 1 – Primavera al Maso</div>
+          <div class="prio-desc">Brand awareness emotiva · 3 Reel + 1 Carousel storytelling · Organic + Ads top funnel</div>
+          <div class="format-chips" style="margin-top:6px;">
+            <span class="chip">9:16</span><span class="chip">4:5</span><span class="chip gold">Maggio–Giugno</span>
+          </div>
+        </div>
+        <div class="prio-prog">
+          <div class="prio-prog-bar"><div class="prio-prog-fill" id="prio-fill-primavera" style="width:0%"></div></div>
+          <span class="prio-prog-text" id="prio-pct-primavera">0%</span>
+          <span class="priority-badge p-alta">Alta</span>
+        </div>
+      </div>
+
+      <div class="prio-row p2" onclick="showTab('estate')">
+        <span class="prio-num">04</span>
+        <div class="prio-info">
+          <div class="prio-name">☀️ Tema 2 – Verso l'Estate & Grigliate</div>
+          <div class="prio-desc">Conversion estiva + drive-to-store · 4 Reel · Tagliere, Prosciutto e melone, Agriturismo</div>
+          <div class="format-chips" style="margin-top:6px;">
+            <span class="chip">9:16</span><span class="chip">4:5</span><span class="chip gold">Maggio–Luglio</span>
+          </div>
+        </div>
+        <div class="prio-prog">
+          <div class="prio-prog-bar"><div class="prio-prog-fill" id="prio-fill-estate" style="width:0%"></div></div>
+          <span class="prio-prog-text" id="prio-pct-estate">0%</span>
+          <span class="priority-badge p-alta">Alta</span>
+        </div>
+      </div>
+
+      <div class="prio-row p3" onclick="showTab('broll')">
+        <span class="prio-num">05</span>
+        <div class="prio-info">
+          <div class="prio-name">📽️ B-Roll Trasversale</div>
+          <div class="prio-desc">Supporto per tutti i contenuti · Federica, Maso, Prodotto, Ospiti, Audio ambient</div>
+          <div class="format-chips" style="margin-top:6px;">
+            <span class="chip gold">Organic</span><span class="chip gold">Ads</span><span class="chip gold">Newsletter</span>
+          </div>
+        </div>
+        <div class="prio-prog">
+          <div class="prio-prog-bar"><div class="prio-prog-fill" id="prio-fill-broll" style="width:0%"></div></div>
+          <span class="prio-prog-text" id="prio-pct-broll">0%</span>
+          <span class="priority-badge p-supporto">Supporto</span>
+        </div>
+      </div>
+
+      <div class="prio-row" onclick="showTab('giornata')">
+        <span class="prio-num">📅</span>
+        <div class="prio-info">
+          <div class="prio-name">Giornata di Shooting</div>
+          <div class="prio-desc">07:00 → 19:00 · Timeline operativa del giorno</div>
+        </div>
+        <div class="prio-prog">
+          <div class="prio-prog-bar"><div class="prio-prog-fill" id="prio-fill-giornata" style="width:0%"></div></div>
+          <span class="prio-prog-text" id="prio-pct-giornata">0%</span>
+          <span class="priority-badge p-logistica">Logistica</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- TAB: FOUNDER STORY -->
+<!-- ═══════════════════════════════════════ -->
+<div class="tab-content" id="tab-founder">
+  <div class="content-wrapper">
+    <div class="intro-note">
+      <strong>Priorità massima. Contenuto evergreen.</strong> 1 video master 90 sec + 3 cut ads 15-30 sec + carousel + quote estratte. Girare all'inizio della giornata. Doppia camera attiva. Niente teleprompter – Federica racconta naturalmente.
+    </div>
+
+    <!-- SETUP -->
+    <div class="section-card" id="sc-f-setup">
+      <div class="section-header" onclick="toggleSection('f-setup')">
+        <div class="section-title-area">
+          <span class="section-icon">⚙️</span>
+          <span class="section-title">Setup Intervista</span>
+        </div>
+        <div class="section-meta">
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-f-setup"></div></div>
+            <span class="prog-mini-pct" id="pct-f-setup">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="category-label">Preparazione Set</div>
+        <div class="check-item" data-group="f-setup" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Location: angolo cucina del Maso o tavolo di lavoro nella sala stagionatura</div>
+        </div>
+        <div class="check-item" data-group="f-setup" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Luce naturale da finestra, sedia comoda, niente teleprompter</div>
+        </div>
+        <div class="check-item" data-group="f-setup" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Doppia camera: 9:16 principale attiva + 16:9 secondaria (per master video)</div>
+        </div>
+        <div class="check-item" data-group="f-setup" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Audio: lavalier su Federica + microfono ambiente separato</div>
+        </div>
+        <div class="check-item" data-group="f-setup" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Foto d'archivio di Tito e famiglia Braito: chieste a Federica prima del shooting (alta risoluzione)</div>
+        </div>
+        <div class="check-item" data-group="f-setup" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Eventuali oggetti storici del Maso: coltelli vecchi, foto incorniciate, attrezzi – verificati e disponibili</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 DOMANDE -->
+    <div class="section-card" id="sc-f-intervista">
+      <div class="section-header" onclick="toggleSection('f-intervista')">
+        <div class="section-title-area">
+          <span class="section-icon">🎤</span>
+          <span class="section-title">Intervista Federica – 8 Domande</span>
+        </div>
+        <div class="section-meta">
+          <span style="font-size:11px;color:var(--text-light);">75–90 min · Format 9:16</span>
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-f-intervista"></div></div>
+            <span class="prog-mini-pct" id="pct-f-intervista">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="category-label">Domande – obiettivo 60-90 sec montabili per domanda</div>
+        <div class="check-item" data-group="f-intervista" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><strong>D1 – Tito, il maestro macellaio.</strong> Chi era, cosa faceva, cosa ti hanno raccontato di lui. Dal 1961, oltre mezzo secolo nella norcineria trentina.</div>
+        </div>
+        <div class="check-item" data-group="f-intervista" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><strong>D2 – Crescere al Maso.</strong> Cosa ha voluto dire crescere in una famiglia che fa Speck e salumi da tre generazioni. Aneddoti specifici, odori, stagioni.</div>
+        </div>
+        <div class="check-item" data-group="f-intervista" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><strong>D3 – Papà Claudio e l'apertura del 2005.</strong> Cosa ti ha insegnato lui. Il ponte tra le tre generazioni. Uscire il dato "2005" in modo naturale.</div>
+        </div>
+        <div class="check-item" data-group="f-intervista" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><strong>D4 – Il momento della scelta.</strong> Ti ricordi il momento in cui hai capito che volevi lavorare al Maso? Aneddoto preciso, non frasi generiche.</div>
+        </div>
+        <div class="check-item" data-group="f-intervista" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><strong>D5 – Cosa è cambiato / cosa non è cambiato.</strong> Tempo, mani, faggio, punzonatura = immutato. Logistica, comunicazione, shop online = cambiato.</div>
+        </div>
+        <div class="check-item" data-group="f-intervista" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><strong>D6 – Federica vs Claudio.</strong> Cosa fai in modo diverso da tuo papà. Cosa fai esattamente uguale. Continuità + freschezza.</div>
+        </div>
+        <div class="check-item" data-group="f-intervista" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><strong>D7 – Cosa vuoi che si capisca.</strong> Cosa vorresti che la gente capisse di quello che fate, e che oggi forse non capisce. → Hook forte per ads.</div>
+        </div>
+        <div class="check-item" data-group="f-intervista" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><strong>D8 – Tra vent'anni.</strong> Cosa speri che resti di tuo nonno Tito nel Maso. → Chiusura emotiva del master video.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANGLE 1 -->
+    <div class="section-card" id="sc-f-a1">
+      <div class="section-header" onclick="toggleSection('f-a1')">
+        <div class="section-title-area">
+          <span class="section-icon">🎯</span>
+          <span class="section-title">Angle 1 – "Tre Generazioni" (15 sec)</span>
+        </div>
+        <div class="section-meta">
+          <span style="font-size:11px;color:var(--text-light);">Cold traffic · Heritage</span>
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-f-a1"></div></div>
+            <span class="prog-mini-pct" id="pct-f-a1">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="category-label">Hook Variants – girare tutti e 3 per A/B test</div>
+        <div class="check-item" data-group="f-a1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook A</span><br>"Mio nonno Tito ha iniziato a fare salumi nel 1961. Mio papà Claudio ha aperto il Maso nel 2005. Adesso ci lavoro anche io."</div>
+        </div>
+        <div class="check-item" data-group="f-a1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook B</span><br>"Sessantacinque anni di Speck e salumi, in una famiglia sola. Te la racconto in quindici secondi."</div>
+        </div>
+        <div class="check-item" data-group="f-a1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook C</span><br>"Tre Braito, tre generazioni, lo stesso Maso a Daiano. E un'unica idea di Speck."</div>
+        </div>
+        <div class="check-item" data-group="f-a1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Body</span><br>"In tre generazioni, una cosa non è mai cambiata: il tempo. Sette mesi per il Tradizionale, fino a dodici per il Riserva. Niente fretta."</div>
+        </div>
+        <div class="check-item" data-group="f-a1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">CTA</span><br>"Lo trovi sul nostro shop, o vieni a trovarci al Maso a Daiano."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANGLE 2 -->
+    <div class="section-card" id="sc-f-a2">
+      <div class="section-header" onclick="toggleSection('f-a2')">
+        <div class="section-title-area">
+          <span class="section-icon">🎯</span>
+          <span class="section-title">Angle 2 – "Mani e Naso" (20 sec)</span>
+        </div>
+        <div class="section-meta">
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-f-a2"></div></div>
+            <span class="prog-mini-pct" id="pct-f-a2">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="category-label">Hook Variants – girare tutti e 3 per A/B test</div>
+        <div class="check-item" data-group="f-a2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook A</span><br>"Mio papà mi diceva sempre: lo Speck non si controlla con le macchine. Si controlla con le mani e con il naso."</div>
+        </div>
+        <div class="check-item" data-group="f-a2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook B</span><br>"Lo sapevi che il modo migliore per capire se uno Speck è pronto è ancora oggi annusarlo? Te lo faccio vedere."</div>
+        </div>
+        <div class="check-item" data-group="f-a2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook C</span><br>"Qui al Maso non abbiamo strumenti elettronici per la stagionatura. Usiamo qualcosa di molto più antico, e funziona meglio."</div>
+        </div>
+        <div class="check-item" data-group="f-a2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Body + CTA</span><br>"L'aveva imparato da suo padre, mio nonno Tito. Adesso tocca a me. Mani e naso su ogni pezzo, uno per volta." → CTA shop</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANGLE 3 -->
+    <div class="section-card" id="sc-f-a3">
+      <div class="section-header" onclick="toggleSection('f-a3')">
+        <div class="section-title-area">
+          <span class="section-icon">🎯</span>
+          <span class="section-title">Angle 3 – "Cosa Resta" (25 sec)</span>
+        </div>
+        <div class="section-meta">
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-f-a3"></div></div>
+            <span class="prog-mini-pct" id="pct-f-a3">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="check-item" data-group="f-a3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook A</span><br>"Mi hanno chiesto: cosa speri che resti, tra vent'anni, del Maso di tuo nonno?"</div>
+        </div>
+        <div class="check-item" data-group="f-a3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook B</span><br>"C'è una cosa che pochi mi chiedono, ma che io mi domando spesso quando sono qui al Maso."</div>
+        </div>
+        <div class="check-item" data-group="f-a3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook C</span><br>"Mio nonno Tito è venuto a mancare qualche anno fa. Ma la verità è che, qui al Maso, c'è ancora ovunque."</div>
+        </div>
+        <div class="check-item" data-group="f-a3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Body + CTA</span><br>"Il modo in cui aspettiamo. Il fatto che non andiamo di fretta, anche quando il mondo va di fretta." → CTA shop + Maso</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- POST-PRODUCTION -->
+    <div class="section-card" id="sc-f-post">
+      <div class="section-header" onclick="toggleSection('f-post')">
+        <div class="section-title-area">
+          <span class="section-icon">🎞️</span>
+          <span class="section-title">Output Post-Production</span>
+        </div>
+        <div class="section-meta">
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-f-post"></div></div>
+            <span class="prog-mini-pct" id="pct-f-post">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="check-item" data-group="f-post" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><strong>Master Video 90 sec</strong> – montaggio completo per landing page, About, YouTube, brand awareness ads</div>
+        </div>
+        <div class="check-item" data-group="f-post" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><strong>3 cut ads 15-30 sec</strong> – versioni brevi Angle 1, 2 e 3 per Meta Ads</div>
+        </div>
+        <div class="check-item" data-group="f-post" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><strong>Carousel + quote estratte</strong> per social media storytelling</div>
+        </div>
+        <div class="check-item" data-group="f-post" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">B-roll founder: foto d'archivio Tito/famiglia integrate nel montaggio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- TAB: TALKING HEADS -->
+<!-- ═══════════════════════════════════════ -->
+<div class="tab-content" id="tab-talking">
+  <div class="content-wrapper">
+    <div class="intro-note">
+      <strong>5 topic indipendenti, 10-15 min ciascuno.</strong> Girare mentre Federica è già in set dopo l'intervista. Per ogni topic: 3 hook variants per A/B test reali. Simon (Meta Ads) ha il materiale per testare.
+    </div>
+
+    <!-- TOPIC A -->
+    <div class="section-card" id="sc-ta">
+      <div class="section-header" onclick="toggleSection('ta')">
+        <div class="section-title-area">
+          <span class="section-icon">🔍</span>
+          <span class="section-title">Topic A – Come riconoscere uno Speck artigianale</span>
+        </div>
+        <div class="section-meta">
+          <span style="font-size:11px;color:var(--text-light);">60-75 sec · Cold traffic</span>
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-ta"></div></div>
+            <span class="prog-mini-pct" id="pct-ta">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="check-item" data-group="ta" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook A</span><br>"Lo sapevi che la maggior parte dello Speck al supermercato non è davvero artigianale? Ti dico come lo riconosci."</div>
+        </div>
+        <div class="check-item" data-group="ta" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook B</span><br>"Ti spiego in 30 secondi come capire se uno Speck è fatto bene, prima ancora di assaggiarlo."</div>
+        </div>
+        <div class="check-item" data-group="ta" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook C</span><br>"Da quando lavoro al Maso, ho imparato tre cose che mi fanno capire subito se uno Speck è artigianale o no."</div>
+        </div>
+        <div class="check-item" data-group="ta" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Body</span><br>Colore rosso scuro irregolare · Grasso bianco-giallino morbido · Odore di faggio vero, non fumo artificiale</div>
+        </div>
+        <div class="check-item" data-group="ta" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">CTA</span><br>"Se vuoi provare quello che facciamo noi, lo trovi sul nostro shop. Tradizione di Tito dal 1961."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOPIC B -->
+    <div class="section-card" id="sc-tb">
+      <div class="section-header" onclick="toggleSection('tb')">
+        <div class="section-title-area">
+          <span class="section-icon">⚖️</span>
+          <span class="section-title">Topic B – Tradizionale o Riserva: cosa cambia</span>
+        </div>
+        <div class="section-meta">
+          <span style="font-size:11px;color:var(--text-light);">60-75 sec · Warm traffic · Upsell</span>
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-tb"></div></div>
+            <span class="prog-mini-pct" id="pct-tb">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="check-item" data-group="tb" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook A</span><br>"Mi chiedono spesso: meglio Tradizionale o Riserva? Te lo dico io, in sessanta secondi."</div>
+        </div>
+        <div class="check-item" data-group="tb" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook B</span><br>"Lo sapevi che tra il Tradizionale e il Riserva ci sono quattro o cinque mesi di differenza? E si sente."</div>
+        </div>
+        <div class="check-item" data-group="tb" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook C</span><br>"Se sei nuovo allo Speck artigianale, parti dal Tradizionale. Se vuoi capire cosa significa stagionatura lunga, ti spiego perché il Riserva è un altro mondo."</div>
+        </div>
+        <div class="check-item" data-group="tb" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Body</span><br>Tradizionale ~7 mesi: morbido, equilibrato, profumato. Riserva 10-12 mesi: asciutto, intenso, complesso. "Tradizionale è il pranzo di tutti i giorni. Riserva è la fetta che ti taglia tuo papà la domenica."</div>
+        </div>
+        <div class="check-item" data-group="tb" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">CTA</span><br>"Sul nostro shop trovi entrambi. Tu da quale partiresti?"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOPIC C -->
+    <div class="section-card" id="sc-tc">
+      <div class="section-header" onclick="toggleSection('tc')">
+        <div class="section-title-area">
+          <span class="section-icon">🇮🇹</span>
+          <span class="section-title">Topic C – Cos'è la Riserva Nazionale</span>
+        </div>
+        <div class="section-meta">
+          <span style="font-size:11px;color:var(--text-light);">60-75 sec · USP forte</span>
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-tc"></div></div>
+            <span class="prog-mini-pct" id="pct-tc">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="alert-box">⚠️ <strong>ATTENZIONE:</strong> mai dire che i maiali vengono da Trentino o Alto Adige. Filiera 100% italiana del Nord Italia, non specificare la regione.</div>
+        <div class="check-item" data-group="tc" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook A</span><br>"Lo sapevi che la maggior parte dello Speck italiano è fatto con carne che arriva da fuori Italia? Ti dico cosa facciamo noi di diverso."</div>
+        </div>
+        <div class="check-item" data-group="tc" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook B</span><br>"Se ti interessa la filiera italiana, questa cosa devi saperla."</div>
+        </div>
+        <div class="check-item" data-group="tc" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook C</span><br>"La nostra Riserva Nazionale è l'unico Speck del Maso fatto al cento per cento con carne italiana. Ti spiego perché ci teniamo."</div>
+        </div>
+        <div class="check-item" data-group="tc" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Body</span><br>Carne suina 100% italiana, filiera del Nord Italia, tracciabilità completa. "È il nostro modo di dire che si può ancora fare Speck con carne cento per cento italiana, anche se è più difficile e costa di più."</div>
+        </div>
+        <div class="check-item" data-group="tc" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">CTA</span><br>"La Riserva Nazionale la trovi sul nostro shop. È la nostra etichetta che parla più di tutte."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOPIC D -->
+    <div class="section-card" id="sc-td">
+      <div class="section-header" onclick="toggleSection('td')">
+        <div class="section-title-area">
+          <span class="section-icon">🦴</span>
+          <span class="section-title">Topic D – L'osso di cavallo: la punzonatura</span>
+        </div>
+        <div class="section-meta">
+          <span style="font-size:11px;color:var(--text-light);">60-90 sec · Alto engagement</span>
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-td"></div></div>
+            <span class="prog-mini-pct" id="pct-td">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="check-item" data-group="td" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook A</span><br>"Lo sapevi che il modo migliore per capire se uno Speck è pronto è infilarci dentro un osso di cavallo?"</div>
+        </div>
+        <div class="check-item" data-group="td" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook B</span><br>"Ti faccio vedere una tecnica che usavano già i nostri nonni, e che noi qui al Maso continuiamo a usare ogni giorno."</div>
+        </div>
+        <div class="check-item" data-group="td" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook C</span><br>"Sembra strano, ma per controllare la stagionatura del nostro Speck usiamo un osso di cavallo. Ti spiego perché."</div>
+        </div>
+        <div class="check-item" data-group="td" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Body</span><br>Si chiama punzonatura. Fibula di cavallo, porosa. Inserita, lasciata qualche secondo, estratta e annusata. Assorbe e restituisce il profumo dello Speck. "Funziona meglio di qualsiasi macchinario."</div>
+        </div>
+        <div class="check-item" data-group="td" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">CTA</span><br>"Se vuoi vedere il gesto fatto come si deve, vieni a trovarci al Maso a Daiano."</div>
+        </div>
+        <div class="check-item" data-group="td" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">B-Roll necessario</span><br>Osso pronto. Gesto lento inserimento + estrazione. Close-up annusata. Slow motion. Minimo 3 angolazioni.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOPIC E -->
+    <div class="section-card" id="sc-te">
+      <div class="section-header" onclick="toggleSection('te')">
+        <div class="section-title-area">
+          <span class="section-icon">🔪</span>
+          <span class="section-title">Topic E – Tre errori quando tagli lo Speck</span>
+        </div>
+        <div class="section-meta">
+          <span style="font-size:11px;color:var(--text-light);">45-60 sec · List-format</span>
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-te"></div></div>
+            <span class="prog-mini-pct" id="pct-te">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="check-item" data-group="te" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook A</span><br>"Tre errori che probabilmente fai quando tagli lo Speck a casa. Te li dico io."</div>
+        </div>
+        <div class="check-item" data-group="te" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook B</span><br>"Lo sapevi che la maggior parte delle persone taglia lo Speck male? Ti spiego come si fa."</div>
+        </div>
+        <div class="check-item" data-group="te" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Hook C</span><br>"Mio papà si arrabbia quando vede certe cose. Te ne dico tre."</div>
+        </div>
+        <div class="check-item" data-group="te" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">Body</span><br>Errore 1: fette troppo spesse · Errore 2: taglio dal frigo senza attesa (15 min temp. ambiente) · Errore 3: cotenna tolta in anticipo · Bonus: coltello lungo, lama liscia</div>
+        </div>
+        <div class="check-item" data-group="te" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><span class="check-tag">CTA</span><br>"Se ti è stato utile, mandalo a chi taglia lo Speck male. E provalo con il nostro Tradizionale."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- TAB: PRIMAVERA -->
+<!-- ═══════════════════════════════════════ -->
+<div class="tab-content" id="tab-primavera">
+  <div class="content-wrapper">
+    <div class="intro-note">
+      <strong>Tema 1 – Primavera al Maso.</strong> Brand awareness emotiva, organic + ads top funnel. Output: 3 reel, 1 carousel, pool b-roll maggio-giugno. Formato 9:16 (reel) + 4:5 (carousel).
+    </div>
+
+    <!-- REEL 1 -->
+    <div class="section-card" id="sc-r1">
+      <div class="section-header" onclick="toggleSection('r1')">
+        <div class="section-title-area">
+          <span class="section-icon">🌅</span>
+          <span class="section-title">Reel 1 – "Una Mattina al Maso" (30-45 sec)</span>
+        </div>
+        <div class="section-meta">
+          <span style="font-size:11px;color:var(--text-light);">Voiceover Federica</span>
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-r1"></div></div>
+            <span class="prog-mini-pct" id="pct-r1">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="category-label">Shot List</div>
+        <div class="check-item" data-group="r1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Porta del Maso che si apre al mattino (golden hour 07:00-08:30)</div>
+        </div>
+        <div class="check-item" data-group="r1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Vista panoramica Val di Fiemme: prati verdi, montagne, cielo limpido</div>
+        </div>
+        <div class="check-item" data-group="r1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Cavalli e mucche al pascolo (totale + dettaglio)</div>
+        </div>
+        <div class="check-item" data-group="r1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Federica entra nella sala stagionatura, accende la luce</div>
+        </div>
+        <div class="check-item" data-group="r1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Mano che tocca un pezzo di Speck appeso, lo gira (close-up)</div>
+        </div>
+        <div class="check-item" data-group="r1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Dettagli stagione: fiori di campo, alberi in fiore, colori primaverili</div>
+        </div>
+        <div class="check-item" data-group="r1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Biba che gira per il cortile (se collabora)</div>
+        </div>
+        <div class="check-item" data-group="r1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Chiusura: tavolo del cortile apparecchiato, prime persone che arrivano</div>
+        </div>
+        <div class="check-item" data-group="r1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Voiceover Federica registrato (4 blocchi: arrivo primavera, odore legno, nonno Tito, vent'anni a Daiano)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REEL 2 -->
+    <div class="section-card" id="sc-r2">
+      <div class="section-header" onclick="toggleSection('r2')">
+        <div class="section-title-area">
+          <span class="section-icon">🦴</span>
+          <span class="section-title">Reel 2 – "L'Osso di Cavallo" (30-40 sec)</span>
+        </div>
+        <div class="section-meta">
+          <span style="font-size:11px;color:var(--text-light);">Educational · Cold audience</span>
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-r2"></div></div>
+            <span class="prog-mini-pct" id="pct-r2">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="category-label">Shot List – Ripetere il gesto 3-4 volte da angolazioni diverse</div>
+        <div class="check-item" data-group="r2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Federica prende l'osso (close-up dettaglio mani)</div>
+        </div>
+        <div class="check-item" data-group="r2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Mano che infila l'osso nel pezzo (slow motion, più angolazioni)</div>
+        </div>
+        <div class="check-item" data-group="r2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Estrazione lenta dell'osso</div>
+        </div>
+        <div class="check-item" data-group="r2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Federica che annusa l'osso – sguardo concentrato, gesto naturale (close-up viso)</div>
+        </div>
+        <div class="check-item" data-group="r2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Cenno positivo o annuire (reazione naturale alla stagionatura)</div>
+        </div>
+        <div class="check-item" data-group="r2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Final shot: pezzo torna appeso, osso poggiato sul tavolo di legno</div>
+        </div>
+        <div class="check-item" data-group="r2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Caption pronta: "Si chiama punzonatura. La tecnica più antica per controllare la stagionatura dello Speck." + hashtag</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REEL 3 -->
+    <div class="section-card" id="sc-r3">
+      <div class="section-header" onclick="toggleSection('r3')">
+        <div class="section-title-area">
+          <span class="section-icon">🤲</span>
+          <span class="section-title">Reel 3 – "Quello che ho imparato" (25-35 sec)</span>
+        </div>
+        <div class="section-meta">
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-r3"></div></div>
+            <span class="prog-mini-pct" id="pct-r3">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="check-item" data-group="r3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Close-up mani di Federica sul pezzo: lo tengono, lo girano (diverse angolazioni)</div>
+        </div>
+        <div class="check-item" data-group="r3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Federica che avvicina il pezzo al naso</div>
+        </div>
+        <div class="check-item" data-group="r3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Foto d'archivio di Tito o Claudio in sovrimpressione (verificare disponibilità PRIMA del shooting)</div>
+        </div>
+        <div class="check-item" data-group="r3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Federica taglia una fetta sottile, la guarda controluce</div>
+        </div>
+        <div class="check-item" data-group="r3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Sguardo verso i pezzi appesi (totale sala stagionatura)</div>
+        </div>
+        <div class="check-item" data-group="r3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Voiceover: "Mio papà mi ha insegnato... L'aveva imparato da suo padre... Adesso tocca a me."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAROUSEL -->
+    <div class="section-card" id="sc-car">
+      <div class="section-header" onclick="toggleSection('car')">
+        <div class="section-title-area">
+          <span class="section-icon">🖼️</span>
+          <span class="section-title">Carousel – "La Primavera al Maso in 6 Immagini"</span>
+        </div>
+        <div class="section-meta">
+          <span style="font-size:11px;color:var(--text-light);">Formato 4:5 · 6 slide</span>
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-car"></div></div>
+            <span class="prog-mini-pct" id="pct-car">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="check-item" data-group="car" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><strong>Slide 1:</strong> Vista esterna del Maso al mattino, scritta "Maggio a Daiano."</div>
+        </div>
+        <div class="check-item" data-group="car" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><strong>Slide 2:</strong> Cavalli o mucche al pascolo, montagne sullo sfondo</div>
+        </div>
+        <div class="check-item" data-group="car" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><strong>Slide 3:</strong> Sala stagionatura, pezzi appesi, luce naturale</div>
+        </div>
+        <div class="check-item" data-group="car" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><strong>Slide 4:</strong> Mani di Federica che tagliano, dettaglio fetta</div>
+        </div>
+        <div class="check-item" data-group="car" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><strong>Slide 5:</strong> Tavolo del cortile apparecchiato, persone che arrivano dal sentiero</div>
+        </div>
+        <div class="check-item" data-group="car" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label"><strong>Slide 6:</strong> Dettaglio tagliere misto + bicchiere di vino, mani che si servono</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- TAB: ESTATE -->
+<!-- ═══════════════════════════════════════ -->
+<div class="tab-content" id="tab-estate">
+  <div class="content-wrapper">
+    <div class="intro-note">
+      <strong>Tema 2 – Verso l'Estate & Grigliate.</strong> Materiale per maggio-luglio organic + ads conversion estive + drive-to-store. Formato 9:16 (reel) + 4:5 e 1:1 (foto).
+    </div>
+
+    <!-- REEL TAGLIERE -->
+    <div class="section-card" id="sc-et1">
+      <div class="section-header" onclick="toggleSection('et1')">
+        <div class="section-title-area">
+          <span class="section-icon">🪵</span>
+          <span class="section-title">Reel 1 – Il Tagliere Misto del Maso (30-40 sec)</span>
+        </div>
+        <div class="section-meta">
+          <span style="font-size:11px;color:var(--text-light);">Piatto identitario</span>
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-et1"></div></div>
+            <span class="prog-mini-pct" id="pct-et1">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="category-label">Preparare il giorno prima: salumi, Speck Tradizionale + Riserva, formaggi nostrani, pane, vino valle</div>
+        <div class="check-item" data-group="et1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Tagliere di legno vuoto su tavolo del Maso (shot iniziale)</div>
+        </div>
+        <div class="check-item" data-group="et1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Composizione passo-passo: prima i salumi delicati, poi Speck Tradizionale, poi Riserva, poi formaggi</div>
+        </div>
+        <div class="check-item" data-group="et1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Dettaglio fette, mani di Federica che dispongono con cura</div>
+        </div>
+        <div class="check-item" data-group="et1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Pane fresco a fianco, bottiglia di vino della valle</div>
+        </div>
+        <div class="check-item" data-group="et1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Tavolo finito, vista dall'alto (flat lay o 45°)</div>
+        </div>
+        <div class="check-item" data-group="et1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Ospiti che si servono (mani, no volti necessari)</div>
+        </div>
+        <div class="check-item" data-group="et1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Voiceover Federica: intro + 4 step composizione + chiusura "Da noi al Maso si mangia così, da quasi vent'anni."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REEL MELONE -->
+    <div class="section-card" id="sc-et2">
+      <div class="section-header" onclick="toggleSection('et2')">
+        <div class="section-title-area">
+          <span class="section-icon">🍈</span>
+          <span class="section-title">Reel 2 – Speck e Melone (20-30 sec)</span>
+        </div>
+        <div class="section-meta">
+          <span style="font-size:11px;color:var(--text-light);">Da fine giugno</span>
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-et2"></div></div>
+            <span class="prog-mini-pct" id="pct-et2">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="category-label">Preparare: melone maturo + profumato, Speck fette sottili, piatto bianco o tagliere</div>
+        <div class="check-item" data-group="et2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Melone intero che viene tagliato in spicchi (close-up, succo visibile)</div>
+        </div>
+        <div class="check-item" data-group="et2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Mani che dispongono il Speck sopra il melone (delicato, "senza forzare")</div>
+        </div>
+        <div class="check-item" data-group="et2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Composizione finale con luce naturale, colori contrastanti (arancio/rosso)</div>
+        </div>
+        <div class="check-item" data-group="et2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Forchetta che prende un pezzo (slow motion o reale)</div>
+        </div>
+        <div class="check-item" data-group="et2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Voiceover Federica: "Quando arriva il caldo... Niente altro. È un piatto che funziona da solo."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REEL 3 TBD -->
+    <div class="section-card" id="sc-et3">
+      <div class="section-header" onclick="toggleSection('et3')">
+        <div class="section-title-area">
+          <span class="section-icon">❓</span>
+          <span class="section-title">Reel 3 – Piatto Ristorante (da definire)</span>
+        </div>
+        <div class="section-meta">
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-et3"></div></div>
+            <span class="prog-mini-pct" id="pct-et3">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="alert-box">⚠️ <strong>DA VERIFICARE CON FEDERICA prima del shooting.</strong> Quale altro piatto del ristorante girare? Opzioni: piatto caldo della cucina, dolce della casa, qualcosa di tipico della stagione.</div>
+        <div class="check-item" data-group="et3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Piatto confermato con Federica</div>
+        </div>
+        <div class="check-item" data-group="et3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Ingredienti / preparazione pianificata</div>
+        </div>
+        <div class="check-item" data-group="et3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Script / voiceover scritto</div>
+        </div>
+        <div class="check-item" data-group="et3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Girato</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REEL SI ARRIVA -->
+    <div class="section-card" id="sc-et4">
+      <div class="section-header" onclick="toggleSection('et4')">
+        <div class="section-title-area">
+          <span class="section-icon">🚶</span>
+          <span class="section-title">Reel 4 – "Si Arriva, Ci si Ferma" (25-35 sec)</span>
+        </div>
+        <div class="section-meta">
+          <span style="font-size:11px;color:var(--text-light);">Drive-to-store · Agriturismo</span>
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-et4"></div></div>
+            <span class="prog-mini-pct" id="pct-et4">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="category-label">Coordinare con ospiti veri del ristorante (d'accordo preventivamente)</div>
+        <div class="check-item" data-group="et4" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Sentiero che porta al Maso, persone in arrivo (di spalle, zaini, scarponi)</div>
+        </div>
+        <div class="check-item" data-group="et4" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Persone che si siedono ai tavoli del cortile</div>
+        </div>
+        <div class="check-item" data-group="et4" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Federica o staff che porta il tagliere al tavolo</div>
+        </div>
+        <div class="check-item" data-group="et4" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Dettagli: mani che brindano, fette che vengono prese</div>
+        </div>
+        <div class="check-item" data-group="et4" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Cavalli al pascolo sullo sfondo (se possibile), luce naturale, suoni della valle</div>
+        </div>
+        <div class="check-item" data-group="et4" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Final shot: tavolo che si svuota, vista verso le montagne</div>
+        </div>
+        <div class="check-item" data-group="et4" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Voiceover Federica off camera + Caption: "Se passi da Daiano in primavera o estate, fai una sosta al Maso." + hashtag</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- TAB: B-ROLL -->
+<!-- ═══════════════════════════════════════ -->
+<div class="tab-content" id="tab-broll">
+  <div class="content-wrapper">
+    <div class="intro-note">
+      <strong>B-Roll trasversale.</strong> Girare in abbondanza durante tutta la giornata. Riutilizzabile per tutti i contenuti futuri: organic, ads, newsletter, sito. Raccogliere pool generoso.
+    </div>
+
+    <!-- FEDERICA SALA STAGIONATURA -->
+    <div class="section-card" id="sc-br1">
+      <div class="section-header" onclick="toggleSection('br1')">
+        <div class="section-title-area">
+          <span class="section-icon">🧺</span>
+          <span class="section-title">Federica – Set Sala Stagionatura</span>
+        </div>
+        <div class="section-meta">
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-br1"></div></div>
+            <span class="prog-mini-pct" id="pct-br1">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="check-item" data-group="br1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Federica entra nella sala, accende la luce (totale)</div>
+        </div>
+        <div class="check-item" data-group="br1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Mani che controllano un pezzo (3 angolazioni diverse)</div>
+        </div>
+        <div class="check-item" data-group="br1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Federica annusa il pezzo (naturale, non forzato)</div>
+        </div>
+        <div class="check-item" data-group="br1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Punzonatura completa: presa osso → inserimento → estrazione → annusata (slow mo + real time)</div>
+        </div>
+        <div class="check-item" data-group="br1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Sguardo verso i pezzi appesi (totale sala)</div>
+        </div>
+        <div class="check-item" data-group="br1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Sguardo diretto in camera (per cover/thumbnail)</div>
+        </div>
+        <div class="check-item" data-group="br1" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Sorriso naturale, nessuna posa forzata</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEDERICA TAVOLO -->
+    <div class="section-card" id="sc-br2">
+      <div class="section-header" onclick="toggleSection('br2')">
+        <div class="section-title-area">
+          <span class="section-icon">🔪</span>
+          <span class="section-title">Federica – Set Tavolo di Lavoro</span>
+        </div>
+        <div class="section-meta">
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-br2"></div></div>
+            <span class="prog-mini-pct" id="pct-br2">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="check-item" data-group="br2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Affettatura lenta a mano (slow motion)</div>
+        </div>
+        <div class="check-item" data-group="br2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Affettatura in tempo reale</div>
+        </div>
+        <div class="check-item" data-group="br2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Mani sul coltello (close-up dettaglio)</div>
+        </div>
+        <div class="check-item" data-group="br2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Federica assaggia un pezzo appena tagliato (reazione naturale)</div>
+        </div>
+        <div class="check-item" data-group="br2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Federica porge una fetta verso camera</div>
+        </div>
+        <div class="check-item" data-group="br2" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Federica controluce mentre guarda una fetta sottile</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESTERNI -->
+    <div class="section-card" id="sc-br3">
+      <div class="section-header" onclick="toggleSection('br3')">
+        <div class="section-title-area">
+          <span class="section-icon">🏔️</span>
+          <span class="section-title">Maso – Esterni Primaverili & Agriturismo</span>
+        </div>
+        <div class="section-meta">
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-br3"></div></div>
+            <span class="prog-mini-pct" id="pct-br3">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="category-label">Luce ottimale: 07:00-10:30 mattino · Golden hour 18:30</div>
+        <div class="check-item" data-group="br3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Vista panoramica Val di Fiemme (totale + drone se disponibile)</div>
+        </div>
+        <div class="check-item" data-group="br3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Maso al mattino, prima luce dorata</div>
+        </div>
+        <div class="check-item" data-group="br3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Cavalli al pascolo (totale + dettaglio)</div>
+        </div>
+        <div class="check-item" data-group="br3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Mucche al pascolo, eventualmente con campane</div>
+        </div>
+        <div class="check-item" data-group="br3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Porta del Maso che si apre (mattino)</div>
+        </div>
+        <div class="check-item" data-group="br3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Cortile con tavoli all'aperto preparati</div>
+        </div>
+        <div class="check-item" data-group="br3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Prati verdi, fiori di campo, alberi in fiore</div>
+        </div>
+        <div class="check-item" data-group="br3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Biba (cane del Maso) – se collabora</div>
+        </div>
+        <div class="check-item" data-group="br3" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Federica che cammina verso le montagne (di spalle)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OSPITI -->
+    <div class="section-card" id="sc-br4">
+      <div class="section-header" onclick="toggleSection('br4')">
+        <div class="section-title-area">
+          <span class="section-icon">👥</span>
+          <span class="section-title">Ospiti & Esperienza al Maso</span>
+        </div>
+        <div class="section-meta">
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-br4"></div></div>
+            <span class="prog-mini-pct" id="pct-br4">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="category-label">Coordinare preventivamente con ospiti disponibili ad essere ripresi</div>
+        <div class="check-item" data-group="br4" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Sentiero che porta al Maso – persone in arrivo (zaini, scarponi, cappellini)</div>
+        </div>
+        <div class="check-item" data-group="br4" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Persone che si siedono ai tavoli del cortile</div>
+        </div>
+        <div class="check-item" data-group="br4" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Cameriera / Federica che porta il tagliere al tavolo</div>
+        </div>
+        <div class="check-item" data-group="br4" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Mani che brindano, persone che si servono (no volti senza consenso)</div>
+        </div>
+        <div class="check-item" data-group="br4" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Atmosfera ristorante: rumori ambient, voci, risate (audio)</div>
+        </div>
+        <div class="check-item" data-group="br4" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Tavolo che si svuota, conto, saluti (chiusura esperienza)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODOTTO -->
+    <div class="section-card" id="sc-br5">
+      <div class="section-header" onclick="toggleSection('br5')">
+        <div class="section-title-area">
+          <span class="section-icon">🥩</span>
+          <span class="section-title">Prodotto</span>
+        </div>
+        <div class="section-meta">
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-br5"></div></div>
+            <span class="prog-mini-pct" id="pct-br5">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="check-item" data-group="br5" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Pezzo intero di Speck Tradizionale (diverse angolazioni)</div>
+        </div>
+        <div class="check-item" data-group="br5" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Pezzo intero di Speck Riserva</div>
+        </div>
+        <div class="check-item" data-group="br5" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Tradizionale vs Riserva fianco a fianco (per Topic B)</div>
+        </div>
+        <div class="check-item" data-group="br5" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Affettatura su tagliere di legno</div>
+        </div>
+        <div class="check-item" data-group="br5" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Tagliere misto completo: salumi + Speck + formaggi nostrani</div>
+        </div>
+        <div class="check-item" data-group="br5" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Salumi vari (ricordare: ~50 tipi prodotti, mostrare varietà)</div>
+        </div>
+        <div class="check-item" data-group="br5" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Confezioni e packaging (per ads conversion)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUDIO AMBIENT -->
+    <div class="section-card" id="sc-br6">
+      <div class="section-header" onclick="toggleSection('br6')">
+        <div class="section-title-area">
+          <span class="section-icon">🎙️</span>
+          <span class="section-title">Audio Ambient – Spesso dimenticato, Fondamentale in Post</span>
+        </div>
+        <div class="section-meta">
+          <div class="section-prog-mini">
+            <div class="prog-mini-track"><div class="prog-mini-fill" id="prog-br6"></div></div>
+            <span class="prog-mini-pct" id="pct-br6">0%</span>
+          </div>
+          <span class="toggle-arrow">▼</span>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="category-label">Dedicare 15-20 min a fine giornata (18:30-19:00) – registrare tutto in silenzio</div>
+        <div class="check-item" data-group="br6" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Coltello sul tagliere (più variazioni: lento, veloce, singolo, multiplo)</div>
+        </div>
+        <div class="check-item" data-group="br6" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Porta del Maso (apertura e chiusura)</div>
+        </div>
+        <div class="check-item" data-group="br6" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Passi sul legno della sala stagionatura</div>
+        </div>
+        <div class="check-item" data-group="br6" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Vento, uccelli, suoni esterni Val di Fiemme</div>
+        </div>
+        <div class="check-item" data-group="br6" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Mucche e cavalli al pascolo, campane se possibile</div>
+        </div>
+        <div class="check-item" data-group="br6" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Voci e risate del ristorante (ambient naturale)</div>
+        </div>
+        <div class="check-item" data-group="br6" onclick="toggle(this)">
+          <div class="custom-checkbox"><span class="check-mark">✓</span></div>
+          <div class="check-label">Silenzi del Maso (registrazione ambiente a riposo)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- TAB: GIORNATA -->
+<!-- ═══════════════════════════════════════ -->
+<div class="tab-content" id="tab-giornata">
+  <div class="content-wrapper">
+    <div class="intro-note">
+      <strong>Giornata unica intensiva.</strong> Thomas: doppia camera (9:16 + 16:9). Federica: 2 outfit minimo. Backup in caso di pioggia: tutti gli interni (intervista, sala stagionatura, tagliere indoor) – esterni rimandabili.
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-time">07:00 – 08:30</div>
+          <div class="timeline-title">🌄 Esterni Mattutini & Animali</div>
+          <div class="timeline-desc">Maso al mattino, panorami Val di Fiemme, porta che si apre, prima luce dorata. Cavalli e mucche al pascolo (la mattina presto sono più tranquilli). Drone se previsto.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-time">08:30 – 11:00</div>
+          <div class="timeline-title">🎬 Founder Story – Intervista Federica</div>
+          <div class="timeline-desc">Le 8 domande + i 5 topic Talking Heads. Doppia camera attiva. Acqua tra una domanda e l'altra. Pause naturali. Non interrompere se il racconto va bene.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-time">11:00 – 12:00</div>
+          <div class="timeline-title">🦴 B-Roll Federica Sala Stagionatura + Punzonatura</div>
+          <div class="timeline-desc">Tutta la checklist B-Roll Federica in sala stagionatura. La punzonatura va girata con cura: ripetere il gesto 3-4 volte da angolazioni diverse, con tempo per il close-up dell'annusata.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-time">12:00 – 13:00</div>
+          <div class="timeline-title">☕ Pausa Pranzo</div>
+          <div class="timeline-desc">Pranzo veloce al tavolo del Maso (può diventare materiale extra). Federica si rilassa e cambia outfit.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-time">13:00 – 14:30</div>
+          <div class="timeline-title">🪵 Reel Tagliere + Prosciutto e Melone</div>
+          <div class="timeline-desc">Tagliere misto e prosciutto e melone: ristorante o tavolo del cortile. Set cucina + esterno. Federica nuovo outfit (sembrano giornate diverse).</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-time">14:30 – 15:30</div>
+          <div class="timeline-title">🚶 Reel "Si Arriva, Ci si Ferma" + Ospiti</div>
+          <div class="timeline-desc">Coordinare con ospiti veri del ristorante (d'accordo preventivamente). Sentiero, arrivo, tavolo, tagliere portato. Atmosfera vera, non costruita.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-time">15:30 – 17:00</div>
+          <div class="timeline-title">🌸 Reel Primavera al Maso</div>
+          <div class="timeline-desc">"Una mattina al Maso", "L'osso di cavallo" (se non già coperto), "Quello che ho imparato". Federica ha già scaldato la voce, qui si chiude la parte voiceover.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-time">17:00 – 18:30</div>
+          <div class="timeline-title">✨ Golden Hour + B-Roll Mancante</div>
+          <div class="timeline-desc">Last shots con luce dorata, totali del Maso, ritratti di Federica, eventuali mancanze dalla checklist. Cavalli e mucche nella luce della sera.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item" onclick="toggleTimeline(this)">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-time">18:30 – 19:00</div>
+          <div class="timeline-title">🎙️ Audio Ambient + Clean-up</div>
+          <div class="timeline-desc">Thomas registra audio pulito: porta, coltello, passi, vento, campane mucche, voci ristorante, silenzi. 15-20 minuti dedicati. Spesso dimenticato, fondamentale in post.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// ── STATE ──
+const storage = {
+  data: {},
+  setItem(k, v) { try { localStorage.setItem(k, v); } catch { this.data[k] = v; } },
+  getItem(k) { try { return localStorage.getItem(k); } catch { return this.data[k] || null; } }
+};
+
+let state = { checks: {}, timelines: {} };
+
+function loadState() {
+  const s = storage.getItem('maso-shooting-2026');
+  if (s) { try { state = JSON.parse(s); } catch {} }
+}
+function saveState() {
+  storage.setItem('maso-shooting-2026', JSON.stringify(state));
+}
+
+// ── TABS ──
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  event.currentTarget && event.currentTarget.classList.add('active');
+  // find and activate the tab button
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    if (b.getAttribute('onclick') && b.getAttribute('onclick').includes("'" + id + "'")) {
+      b.classList.add('active');
+    }
+  });
+}
+
+// ── SECTIONS COLLAPSE ──
+function toggleSection(id) {
+  const card = document.getElementById('sc-' + id);
+  card.classList.toggle('collapsed');
+}
+
+// ── CHECKBOXES ──
+function toggle(el) {
+  const key = el.dataset.id || (el.dataset.group + '-' + Array.from(el.parentNode.children).indexOf(el));
+  el.classList.toggle('checked');
+  const checked = el.classList.contains('checked');
+  const uid = el.dataset.uid || generateUid(el);
+  state.checks[uid] = checked;
+  saveState();
+  updateAll();
+}
+
+function generateUid(el) {
+  if (!el.dataset.uid) {
+    el.dataset.uid = 'ci-' + Math.random().toString(36).substr(2, 9);
+  }
+  return el.dataset.uid;
+}
+
+// ── TIMELINE ──
+function toggleTimeline(el) {
+  el.classList.toggle('checked');
+  const uid = el.dataset.uid || generateUid(el);
+  state.timelines[uid] = el.classList.contains('checked');
+  saveState();
+  updateAll();
+}
+
+// ── PROGRESS ──
+function getGroupProgress(group) {
+  const items = document.querySelectorAll(`[data-group="${group}"]`);
+  if (!items.length) return { done: 0, total: 0, pct: 0 };
+  const done = Array.from(items).filter(i => i.classList.contains('checked')).length;
+  return { done, total: items.length, pct: Math.round((done / items.length) * 100) };
+}
+
+function getSectionProgress(sectionId) {
+  const card = document.getElementById('sc-' + sectionId);
+  if (!card) return { done: 0, total: 0, pct: 0 };
+  const items = card.querySelectorAll('.check-item');
+  const done = Array.from(items).filter(i => i.classList.contains('checked')).length;
+  const total = items.length;
+  return { done, total, pct: total ? Math.round(done / total * 100) : 0 };
+}
+
+function getTabProgress(tabId) {
+  const tab = document.getElementById('tab-' + tabId);
+  if (!tab) return { done: 0, total: 0, pct: 0 };
+  const items = tabId === 'giornata'
+    ? tab.querySelectorAll('.timeline-item')
+    : tab.querySelectorAll('.check-item');
+  const done = Array.from(items).filter(i => i.classList.contains('checked')).length;
+  const total = items.length;
+  return { done, total, pct: total ? Math.round(done / total * 100) : 0 };
+}
+
+function updateSectionProg(sectionId) {
+  const p = getSectionProgress(sectionId);
+  const fill = document.getElementById('prog-' + sectionId);
+  const pct = document.getElementById('pct-' + sectionId);
+  if (fill) fill.style.width = p.pct + '%';
+  if (pct) pct.textContent = p.pct + '%';
+}
+
+function updateAll() {
+  // Section-level
+  const sections = [
+    'f-setup','f-intervista','f-a1','f-a2','f-a3','f-post',
+    'ta','tb','tc','td','te',
+    'r1','r2','r3','car',
+    'et1','et2','et3','et4',
+    'br1','br2','br3','br4','br5','br6'
+  ];
+  sections.forEach(updateSectionProg);
+
+  // Tab badges
+  const tabs = ['founder','talking','primavera','estate','broll','giornata'];
+  tabs.forEach(t => {
+    const p = getTabProgress(t);
+    const badge = document.getElementById('badge-' + t);
+    if (badge) badge.textContent = p.pct + '%';
+    const pFill = document.getElementById('prio-fill-' + t);
+    const pPct = document.getElementById('prio-pct-' + t);
+    if (pFill) pFill.style.width = p.pct + '%';
+    if (pPct) pPct.textContent = p.pct + '%';
+  });
+
+  // Global
+  let totalAll = 0, doneAll = 0;
+  ['founder','talking','primavera','estate','broll','giornata'].forEach(t => {
+    const p = getTabProgress(t);
+    totalAll += p.total;
+    doneAll += p.done;
+  });
+  const globalPct = totalAll ? Math.round(doneAll / totalAll * 100) : 0;
+  document.getElementById('global-fill').style.width = globalPct + '%';
+  document.getElementById('global-pct').textContent = globalPct + '%';
+  document.getElementById('stat-total').textContent = totalAll;
+  document.getElementById('stat-done').textContent = doneAll;
+  document.getElementById('stat-open').textContent = totalAll - doneAll;
+  document.getElementById('stat-pct').textContent = globalPct + '%';
+}
+
+// ── INIT ──
+function init() {
+  loadState();
+
+  // Assign UIDs and restore state
+  document.querySelectorAll('.check-item').forEach((el, i) => {
+    el.dataset.uid = 'ci-' + i;
+    if (state.checks[el.dataset.uid]) el.classList.add('checked');
+  });
+  document.querySelectorAll('.timeline-item').forEach((el, i) => {
+    el.dataset.uid = 'tl-' + i;
+    if (state.timelines[el.dataset.uid]) el.classList.add('checked');
+  });
+
+  updateAll();
+}
+
+window.addEventListener('DOMContentLoaded', init);
+</script>
+
+</body>
+</html>
